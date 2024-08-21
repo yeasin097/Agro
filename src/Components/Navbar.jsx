@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Product from "./Product";
+import Storage from './Storage';
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState('allbids'); // Manage active tab state
@@ -10,8 +11,8 @@ const Navbar = () => {
         return <Product/>;
       case 'mybids':
         return <Product/>;
-      case 'publishedbids':
-        return <Product/>;
+      case 'storage':
+        return <Storage/>;
       default:
         return <Product/>;
     }
@@ -42,14 +43,14 @@ const Navbar = () => {
             My Bids
           </button>
           <button
-            onClick={() => setActiveTab('publishedbids')}
+            onClick={() => setActiveTab('storage')}
             className={`m-auto py-2 px-4 rounded-t text-xl font-bold ${
-              activeTab === 'publishedbids'
+              activeTab === 'storage'
                 ? 'bg-green-500 text-white'
                 : 'bg-green-100 text-green-500'
             }`}
           >
-            Published Bids
+            Inventory
           </button>
         </div>
       </nav>
